@@ -1,0 +1,134 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+            Base application theme, dependent on API level. This theme is replaced
+            by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+        <style name="AppBaseTheme" parent="android:Theme.Light">
+
+                Theme customizations available in newer API levels can go in
+                res/values-vXX/styles.xml, while customizations related to
+                backward-compatibility can go here.
+
+        </style>
+
+        Application theme.
+        <style name="AppTheme" parent="AppBaseTheme">
+            All customizations that are NOT specific to a particular API-level can go here.
+        </style>
+    -->
+    <style name="AppBaseTheme" parent="AppTheme.Base">
+
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+        <!-- Actionbar color -->
+        <item name="colorPrimary">@color/soft_bule</item>
+        <item name="android:textSize">32sp</item>
+        <!-- Status bar color -->
+        <item name="colorPrimaryDark">@color/soft_bule</item>
+        <!-- Window color -->
+        <item name="android:windowBackground">@color/softgrey</item>
+        <!-- ProgressDrawableBase 具体参见ProgressDrawableBase类 wu@20150716 -->
+        <item name="colorControlActivated">@color/soft_bule</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="Theme_Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="processDialog">
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:alpha">0.3</item>
+    </style>
+
+    <style name="mySpinnerStyle" parent="@android:style/Widget.ListView.DropDown">
+        <item name="android:divider">#00ff00</item>
+        <item name="android:dividerHeight">1dp</item>
+    </style>
+
+    <style name="applicationTheme" parent="@android:style/Theme.Light">
+        <item name="android:dropDownListViewStyle">@style/mySpinnerStyle</item>
+    </style>
+
+    <!-- smooth -->
+
+    <style name="Theme.SmoothProgressBarDefaults" parent="android:Theme">
+        <item name="spbStyle">@style/SmoothProgressBar</item>
+    </style>
+
+    <style name="SPB" parent="android:Widget.ProgressBar.Horizontal"></style>
+    
+    <style name="rg_pay_mode" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:button">@null</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+    <style name="moderate2Text" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/text_moderate2</item>
+    </style>
+    <style name="payinfo_amount_tv" parent="android:Widget.TextView">
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:textColor">@color/home_btn_orange</item>
+        <item name="android:textSize">@dimen/text_moderate2</item>
+    </style>
+    <style name="payinfo_common_amount_tv" parent="android:Widget.TextView">
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:textSize">@dimen/text_moderate2</item>
+    </style>
+
+    <style name="SmoothProgressBar" parent="SPB">
+        <item name="spb_color">@color/spb_default_color</item>
+        <item name="spb_sections_count">@integer/spb_default_sections_count</item>
+        <item name="spb_speed">@string/spb_default_speed</item>
+        <item name="spb_stroke_width">@dimen/spb_default_stroke_width</item>
+        <item name="spb_stroke_separator_length">@dimen/spb_default_stroke_separator_length</item>
+        <item name="spb_reversed">@bool/spb_default_reversed</item>
+        <item name="spb_mirror_mode">@bool/spb_default_mirror_mode</item>
+        <item name="spb_interpolator">@integer/spb_default_interpolator</item>
+    </style>
+    <!-- end smooth -->
+    
+    <style name="PopupAnimation" parent="android:Animation" mce_bogus="1">          
+        <item name="android:windowEnterAnimation">@anim/popup_enter</item>     
+        <item name="android:windowExitAnimation">@anim/popup_exit</item>     
+    </style>  
+    
+    <!-- 透明dialog -->
+    <style name="TranDialogStyle">
+        <!-- 
+        <item name="android:windowAnimationStyle">@style/mystyle</item> 
+        -->
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wizarpos.payment.padui.view.PercentLinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginLeft="350dp"
+        android:layout_marginRight="350dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_cash"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingTop="50dp"
+            android:background="@drawable/btn_selector_cashpay"
+            android:textSize="40sp"
+            android:textColor="@color/white"
+            android:text="收银" />
+        <Button
+            android:id="@+id/btn_manage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_selector_operator_manage"
+            android:textColor="@color/white"
+            android:paddingTop="50dp"
+            android:textSize="40sp"
+            android:paddingLeft="50dp"
+            android:text="操作员管理" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="350dp"
+        android:layout_marginRight="350dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_query_cancle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="50dp"
+            android:paddingLeft="50dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_selector_query_and_cancle"
+            android:textSize="40sp"
+            android:text="查询|撤销" />
+        <Button
+            android:id="@+id/btn_setting"
+            android:layout_width="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="match_parent"
+            android:paddingTop="50dp"
+            android:paddingLeft="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector_setting"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:text="设置" />
+    </LinearLayout>
+
+</com.wizarpos.payment.padui.view.PercentLinearLayout>

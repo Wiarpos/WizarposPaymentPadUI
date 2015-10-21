@@ -1,0 +1,31 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="key_board_h">90dp</dimen>
+    <dimen name="key_board_big_h">181dp</dimen>
+    <dimen name="key_board_123_top">182.5dp</dimen>
+    <dimen name="key_board_0del_top">274dp</dimen>
+    <dimen name="key_board_blue_h">51dp</dimen>
+    <dimen name="key_board_blue_big_h">210dp</dimen>
+    <dimen name="key_board_blue_top">50dp</dimen>
+    <dimen name="activity_key_board_top">130dp</dimen>
+    <dimen name="activity_repeal_transaction_top">150dp</dimen>
+    <dimen name="activity_input_password_top">160dp</dimen>
+    <dimen name="fragment_ticket_number_humanwork_top">130dp</dimen>
+	<dimen name="activity_cash_pay_success_top">100dp</dimen>
+	<dimen name="activity_alipay_native_top">20dp</dimen>
+	
+	<dimen name="tenpay_native_btn_btn_margin">30dp</dimen>
+	<dimen name="fragment_total_margain">15dp</dimen>
+	<dimen name="text_size_normal">20sp</dimen>
+    <dimen name="text_size_small">15sp</dimen>
+    <dimen name="text_size_smaller">10sp</dimen>
+    <dimen name="text_size_larger">40sp</dimen>
+    <dimen name="margin_normal">10dp</dimen>
+    <dimen name="margin_small">5dp</dimen>
+    <dimen name="padding_normal">10dp</dimen>
+    <dimen name="show_amount_text_size">40sp</dimen>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="text_mirco">12sp</dimen>
+    <dimen name="text_ultraMini">13sp</dimen>
+    <dimen name="text_mini">14sp</dimen>
+    <dimen name="text_ultraSmall">16sp</dimen>
+    <dimen name="text_small">17sp</dimen>
+    <dimen name="text_moderate1">18sp</dimen>
+    <dimen name="text_moderate2">19sp</dimen>
+    <dimen name="text_moderate3">21sp</dimen>
+    <dimen name="text_big">25sp</dimen>
+    <dimen name="text_extraBig">31sp</dimen>
+
+</resources>

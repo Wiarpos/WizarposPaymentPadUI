@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+      <item android:drawable="@drawable/input_focus" android:state_focused="true"/>
+ <!-- 选中时效果图 -->
+
+    <item android:drawable="@drawable/input" android:state_focused="false"/>
+ <!-- 未选中时效果图 -->
+  
+</selector>

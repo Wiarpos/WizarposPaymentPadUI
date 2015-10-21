@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wizarpos.payment.padui.view.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+			android:background="@android:color/transparent"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@string/app_name"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/setting" />
+        <LinearLayout android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:orientation="horizontal">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账号："/>
+            <EditText 
+                android:id="@+id/loginName"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:paddingLeft="10dp"
+                android:editable="false"
+                android:hint="请输入操作员账号"
+                android:background="@drawable/edit_input_selector"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密码："/>
+            <EditText 
+                android:id="@+id/loginPassword"
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:editable="false"
+                android:hint="请输入操作员密码"
+                android:layout_height="70dp"
+                android:background="@drawable/edit_input_selector"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|center"
+            android:layout_marginBottom="50dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:orientation="horizontal">
+            <Button 
+                android:id="@+id/btn_back"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_selector_back"
+                android:drawableLeft="@drawable/return_icon"
+                android:paddingLeft="50dp"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="退出"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+            <Button 
+                android:id="@+id/btn_confirm"
+                android:layout_width="0dp"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="确定"
+                android:paddingLeft="50dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/white"
+                android:drawableLeft="@drawable/login_icon"
+                android:background="@drawable/btn_selector_nextpage"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+        <FrameLayout
+            android:id="@+id/flInputPad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </FrameLayout>
+
+    </LinearLayout>
+
+</com.wizarpos.payment.padui.view.PercentLinearLayout>

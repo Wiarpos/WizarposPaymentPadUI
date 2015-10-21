@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 主体背景色 -->
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="main_background_color">#6A5ACD</color>
+    <color name="table_view_title_background_color">#000080</color>
+    <color name="selected_background_color">#00FF00</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red_color">#E51400</color>
+    <color name="layout_btn_background_color">#F3F3F3</color>
+    <!-- 红色 -->
+    <color name="green_color">#339933</color>
+    <!-- 绿色 -->
+    <color name="blue_color">#1BA1E2</color>
+    <!-- 蓝色 -->
+    <color name="orange_color">#F09609</color>
+    <!-- 橙色 -->
+    <color name="sage_green_color">#8CBF26</color>
+    <!-- 草绿色 -->
+    <color name="lake_blue_color">#00ABA9</color>
+    <!-- 湖蓝色 -->
+    <color name="yang_hong_color">#FF0097</color>
+    <!-- 羊红色 -->
+    <color name="fen_color">#E671B8</color>
+    <!-- 粉色 -->
+    <color name="zong_color">#996600</color>
+    <!-- 棕色 -->
+    <color name="zi_color">#A200FF</color>
+    <!-- 紫色 -->
+    <color name="gray_color">#d3d7d4</color>
+    <!-- 灰色 -->
+
+    <color name="c_green_color">#f0f0</color>
+    <!-- 绿色 -->
+    <color name="pink_color">#f0f</color>
+    <!-- 粉红色 -->
+    <color name="yellow_color">#ff0</color>
+    <!-- 黄色 -->
+    <color name="c_red_color">#ff00</color>
+    <!-- 红色 -->
+    <color name="c_blue_color">#00f</color>
+    <!-- 蓝色 -->
+
+    <color name="inputpad_selected">#E4E4E4</color>
+    <color name="inputpad_normal">#FEFEFE</color>
+    <color name="inputpad_line">#ABABAB</color>
+    <color name="inputpad_celar_normal">#FE8700</color>
+    <color name="inputpad_celar_pressed">#F07F00</color>
+    <color name="inputpad_submit_normal">#00ADEE</color>
+    <color name="inputpad_submit_pressed">#0098CB</color>
+    <color name="cashier_input_pay_mode">#444A52</color>
+    <color name="cashier_input_amount">#3B424B</color>
+    <color name="cashier_choose_pay_mode_title">#A8A8A9</color>
+    <color name="cashier_choose_pay_mode_cancel">#FE8C0D</color>
+    <color name="cashier_pay_item_tv">#AFAFB0</color>
+    <color name="cashier_choose_pay_mode_submit">#0EB0EF</color>
+    <color name="home_btn_orange">#FF8800</color>
+    <color name="color_mix_pay_gv_bg">#F8F8F8</color>
+    <color name="color_mix_pay_gv_line">#D8D8D8</color>
+    <color name="color_discount_line">#00AEEF</color>
+    <color name="color_discount_dark_line">#E6E6E6</color>
+
+    <!-- zxing -->
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="possible_result_points">#c0ffbd21</color>
+    <!-- Android standard ICS color -->
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c099cc00</color>
+    <!-- Android standard ICS color -->
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="viewfinder_laser">#ffcc0000</color>
+    <!-- Android standard ICS color -->
+    <color name="viewfinder_mask">#00000000</color>
+    <color name="capture_text_cover_bg">#99535353</color>
+    <color name="seek_bar_text">#fff6f6f6</color>
+    <!-- end zxing -->
+
+    <color name="light_gray">#909090</color>
+    <color name="home_records_title">#7C7C7C</color>
+    <color name="home_records_end">#8A8A8A</color>
+    <color name="home_btn_blue">#00AEEF</color>
+    <color name="home_btn_blue_deep">#0088BB</color>
+    <color name="home_btn_orange_deep">#D87E18</color>
+
+</resources>
