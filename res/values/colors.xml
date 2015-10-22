@@ -62,7 +62,9 @@
     <color name="color_mix_pay_gv_line">#D8D8D8</color>
     <color name="color_discount_line">#00AEEF</color>
     <color name="color_discount_dark_line">#E6E6E6</color>
-
+    <color name="yuan_text_color">#999999</color>
+    <color name="keyboard_background_color">#C0C0C0</color>
+	
     <!-- zxing -->
     <color name="contents_text">#ff000000</color>
     <color name="encode_view">#ffffffff</color>

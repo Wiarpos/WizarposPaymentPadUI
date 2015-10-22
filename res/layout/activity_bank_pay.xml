@@ -1,0 +1,245 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/LinearLayout_one"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:background="@color/layout_btn_background_color" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:paddingLeft="100dp"
+            android:paddingRight="80dp" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:layout_marginTop="30dp" >
+
+                <TextView
+                    android:id="@+id/tv_chaier_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/tv_chaier_two"
+                    android:textColor="@color/table_view_title_text_color" />
+
+                <TextView
+                    android:id="@+id/b_input_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toLeftOf="@+id/tv_yuan_one"
+                    android:layout_toRightOf="@+id/tv_chaier_two"
+                    android:gravity="right"
+                    android:paddingRight="4dp"
+                    android:textColor="@color/card_query_text_color" />
+
+                <TextView
+                    android:id="@+id/tv_yuan_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/yuan"
+                    android:textColor="@color/yuan_text_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="#00FFFFFF" >
+
+                <TextView
+                    android:id="@+id/tv_reduce"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/tv_reduce"
+                    android:textColor="@color/table_view_title_text_color" />
+
+                <TextView
+                    android:id="@+id/b_reduce_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toLeftOf="@+id/tv_yuan_two"
+                    android:layout_toRightOf="@+id/tv_reduce"
+                    android:gravity="right|center_vertical"
+                    android:paddingRight="4dp"
+                    android:text="0.00"
+                    android:textColor="@color/card_query_text_color" />
+
+                <TextView
+                    android:id="@+id/tv_yuan_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/yuan"
+                    android:textColor="@color/yuan_text_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:background="#00FFFFFF" >
+
+                <TextView
+                    android:id="@+id/tv_scan_card_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/scan_card_two"
+                    android:textColor="@color/table_view_title_text_color" />
+
+                <EditText
+                    android:id="@+id/b_pay_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/tv_yuan_three"
+                    android:layout_toRightOf="@+id/tv_scan_card_two"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/edit_input_selector"
+                    android:editable="false"
+                    android:gravity="right|center_vertical"
+                    android:paddingRight="6dp"
+                    android:text="0.00"
+                    android:textColor="@color/card_query_text_color" />
+
+                <TextView
+                    android:id="@+id/tv_yuan_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/yuan"
+                    android:textColor="@color/yuan_text_color" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#00FFFFFF"
+            android:padding="10dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/b_back_btn"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_selector_back"
+                android:drawableLeft="@drawable/btn_icon_back"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:text="@string/btn_back_cashier"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/b_pay_btn"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_selector_ok"
+                android:drawableLeft="@drawable/btn_icon_ok"
+                android:gravity="center"
+                android:text="@string/tv_pay"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bcp_ly_ticket"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_weight="1"
+        android:background="@color/keyboard_background_color"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/bcp_tv_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ticket_scanner_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:weightSum="5" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="4"
+                android:background="@android:color/white"
+                android:padding="10dp" >
+
+                <EditText
+                    android:id="@+id/et_ticket_mem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_selector"
+                    android:editable="false"
+                    android:hint="请输入券号T"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@color/layout_btn_background_color"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/pay_ticket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_selector_scan"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/flInputPad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

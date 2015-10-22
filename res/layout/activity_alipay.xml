@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:id="@+id/linear_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/wp_btn_back"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_selector_back"
+            android:onClick="back"
+            android:text="返回"
+            android:textColor="@android:color/white"
+            android:textSize="28dp" />
+
+        <Button
+            android:id="@+id/wp_btn_change_qrcode"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/btn_selector_nextpage"
+            android:onClick="changeqrcode"
+            android:text="切换摄像头"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/wp_btn_print_weichat_pay_qr_code"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/btn_selector_nextpage"
+            android:onClick="printQRCode"
+            android:text="打印订单二维码"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/wp_btn_check_order_state"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/btn_selector_nextpage"
+            android:onClick="checkOrderState"
+            android:text="检查订单"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/zhu_sao_pay"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:onClick="zhuSaoPay"
+                android:text="主扫支付"
+                android:textColor="@color/table_view_title_text_color"
+                android:textSize="28dp" />
+
+            <Button
+                android:id="@+id/bei_sao_pay"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:onClick="beiSaoPay"
+                android:text="被扫支付"
+                android:textColor="@color/table_view_title_text_color"
+                android:textSize="28dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="2" >
+
+            <TextView
+                android:id="@+id/line_zhu_sao"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/blue_color" />
+
+            <TextView
+                android:id="@+id/line_bei_sao"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/gray_color" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_BAT_Fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>
