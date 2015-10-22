@@ -3,6 +3,7 @@ package com.wizarpos.payment.padui.setting;
 import com.wizarpos.payment.padui.R;
 import com.wizarpos.payment.padui.common.BaseViewActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 /**
@@ -27,14 +28,16 @@ public class SettingMainMenActivity extends BaseViewActivity {
 	public void onClick(View v) {
 		super.onClick(v);
 		switch (v.getId()) {
-		case R.id.btn_password:
-			
+		case R.id.btn_password: //修改密码
+			startActivity(new Intent(SettingMainMenActivity.this,SettingPasswordActivity.class));
 			break;
-		case R.id.btn_params_setting:
 			
+		case R.id.btn_params_setting: //基本参数设置
+			startActivity(new Intent(SettingMainMenActivity.this,SettingParamsActivity.class));
 			break;
-		case R.id.btn_offline_sync:
 			
+		case R.id.btn_offline_sync://离线同步
+			startActivity(new Intent(SettingMainMenActivity.this,OfflineSyncActivity.class));
 			break;
 
 		default:

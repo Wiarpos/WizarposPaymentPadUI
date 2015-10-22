@@ -1,9 +1,9 @@
 package com.wizarpos.payment.padui.cashier.activity;
 
 import com.wizarpos.payment.padui.R;
-import com.wizarpos.payment.padui.common.BaseViewActivity;
 import com.wizarpos.payment.padui.manage.InputPasswordActivity;
 import com.wizarpos.payment.padui.manage.OperatorManageActivity;
+import com.wizarpos.payment.padui.statics.StaticsMainMenuActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.view.View;
  * @author hong
  * 收款主界面，包括收款、操作员管理、查询|撤销及设置
  */
-public class MainMenuActivity extends BaseViewActivity {
+public class MainMenuActivity extends TransactionActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,10 +34,11 @@ public class MainMenuActivity extends BaseViewActivity {
 		case R.id.btn_cash://收款
 			
 			break;
-		case R.id.btn_manage://管理
+		case R.id.btn_manage://操作员管理
 			startActivity(new Intent(MainMenuActivity.this,OperatorManageActivity.class));
 			break;
 		case R.id.btn_query_cancle://查询撤销
+			startActivity(new Intent(MainMenuActivity.this,StaticsMainMenuActivity.class));
 			break;
 		case R.id.btn_setting://设置
 			startActivity(new Intent(MainMenuActivity.this,InputPasswordActivity.class));

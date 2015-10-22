@@ -5,16 +5,125 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="18"
+        android:minSdkVersion="8"
         android:targetSdkVersion="21" />
+	 <!-- 获取IMEI所需权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ARQ_EMV_COMMON" />
+    <uses-permission android:name="android.permission.ARQ_EMV_FILE" />
+    <uses-permission android:name="android.permission.ARQ_EMV_LIB" />
+    <uses-permission android:name="android.permission.ARQ_KEY" />
+    <uses-permission android:name="android.permission.ARQ_MAGC" />
+    <uses-permission android:name="android.permission.ARQ_LCD" />
+    <uses-permission android:name="android.permission.ARQ_ICC" />
+    <uses-permission android:name="android.permission.ARQ_SECURITY" />
+    <uses-permission android:name="android.permission.ARQ_MISC" />
+    <uses-permission android:name="android.permission.ARQ_FILEOPS" />
+    <uses-permission android:name="android.permission.ARQ_ENCRYPTION" />
+    <uses-permission android:name="android.permission.ARQ_KEYREL" />
+    <uses-permission android:name="android.permission.CLOUDPOS_SAFE_MODULE_READONLY" />
+    <uses-permission android:name="android.permission.CLOUDPOS_SAFE_MODULE" />
+    <!-- 开钱箱的权限 -->
+    <uses-permission android:name="android.permission.WIZARPOS_MONEYBOX" />
+    <!-- 调试需要注掉 -->
+    <uses-permission android:name="android.permission.WIZARPOS_CUSTOMER_DISPLAY" />
+    <uses-permission android:name="android.permission.CLOUDPOS_PUSHSERVICE" />
+    <!-- 打电话权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
+    <permission
+        android:name="com.wizarpos.cashier.permission.CASHIER_SERVICE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.wizarpos.cashier.permission.CASHIER_WEPAY"
+        android:protectionLevel="normal" />
+
+    <!--
+    <permission
+        android:name="com.wizarpos.cashier.permission.CASHEIR_BROADCAST"
+        android:protectionLevel="normal" />
+    -->
+
+
+    <!-- 声明支付易客显广播权限 ,调用新的客显工程 -->
+    <!-- <uses-permission android:name="com.android.permission.SEND_PAY" /> -->
+
+
+    <!-- 打印权限 -->
+    <uses-permission android:name="android.permission.WIZARPOS_PRINTER" />
+    <uses-permission android:name="android.permission.WIZARPOS_MSR" />
+    <uses-permission android:name="android.permission.WIZARPOS_CONTACTLESS_CARD" />
+    <uses-permission android:name="android.permission.WIZARPOS_SMARTCARD" />
+    <uses-permission android:name="android.permission.WIZARPOS_PIN_GET_PIN_BLOCK" />
+    <uses-permission android:name="android.permission.WIZARPOS_PIN_MAC" />
+    <uses-permission android:name="android.permission.WIZARPOS_PIN_ENCRYPT_DATA" />
+    <uses-permission android:name="android.permission.WIZARPOS_PIN_UPDATA_MASTER_KEY" />
+    <uses-permission android:name="android.permission.WIZARPOS_PIN_UPDATA_USER_KEY" />
+    <uses-permission android:name="android.permission.WIZARPOS_SERIAL" />
+
+    <!-- 允许网络访问的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 扫描权限 开始 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- 扫描权限 结束 -->
+
+
+    <!-- 支付应用调用权限 开始 -->
+    <uses-permission android:name="com.unionpay.CloudPosPaymentClient.permission.CLOUDPAY" />
+    <uses-permission android:name="com.wizarpos.cuppos.CloudPosPaymentClient.permission.CLOUDPAY" />
+    <uses-permission android:name="com.wizarpos.fjumspos.CloudPosPaymentClient.permission.CLOUDPAY" />
+    <uses-permission android:name="com.wizarpos.cardinfolink.CloudPosPaymentClient.permission.CLOUDPAY" />
+    <uses-permission android:name="com.wizarpos.allinpay_gd.payment.CloudPosPaymentClient.permission.CLOUDPAY" />
+    <uses-permission android:name="com.wizarpos.paymentrouter.permission.WIZARPOS_PAY" />
+    <uses-permission android:name="com.tesla.tunguska.cuppay.CloudPosPaymentClient.permission.CLOUDPAY" />
+    <uses-permission android:name="com.tesla.tunguska.cuppay.CloudPosPaymentClient.permission.REVERSE" />
+    <uses-permission android:name="com.tesla.tunguska.cuppay.CloudPosPaymentClient.permission.CLOUDPAY_SIGN" />
+    <uses-permission android:name="com.tesla.tunguska.cuppay.CloudPosPaymentClient.permission.REVERSE_SIGN" />
+    <!-- 支付应用调用权限 结束 -->
+
+
+    <!-- 签名权限 -->
+    <uses-permission android:name="android.permission.WIZARPOS_SAFE_MODULE" />
+
+    <!-- 系统查看任务 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- Required  一些系统要求的权限，如访问网络等 -->
+    <uses-permission android:name="com.wizarpos.pay.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:name="com.wizarpos.payment.padui.app.PadPaymentApplication"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.wizarpos.payment.padui.login.LoginActivity"
+            android:name="com.wizarpos.payment.padui.login.StartupActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,10 +131,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.wizarpos.payment.padui.login.LoginActivity"/>
         <activity android:name="com.wizarpos.payment.padui.cashier.activity.MainMenuActivity"/>
         <activity android:name="com.wizarpos.payment.padui.manage.OperatorManageActivity"/>
         <activity android:name="com.wizarpos.payment.padui.manage.InputPasswordActivity"/>
         <activity android:name="com.wizarpos.payment.padui.setting.SettingMainMenActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.setting.SettingPasswordActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.setting.SettingParamsActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.setting.OfflineSyncActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.setting.basicalinfo.AuthCodeActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.setting.basicalinfo.BasicalInfoActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.setting.basicalinfo.OtherTransactionActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.statics.TransactionCancleActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.statics.TransactionDetailActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.statics.TransactionGathingActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.statics.StaticsMainMenuActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.AlipayActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.BaidupayActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.BankCardPayActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.CashPayActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.MemberCardPayActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.OtherpayActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.PaymentMainMenuActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.PaySuccessActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.TenpayActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.TicketUseActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.WepayActivty"/>
     </application>
 
 </manifest>

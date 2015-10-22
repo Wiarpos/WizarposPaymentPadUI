@@ -26,6 +26,7 @@ public class InputPasswordActivity extends BaseViewActivity {
 		
 	 private void initView(){
 		 setMainView(R.layout.activity_input_password);
+		 setTitleText("设置安全密码");
 		 inputPadFragment = new InputPadFragment();
 		 getSupportFragmentManager().beginTransaction().replace(R.id.flInputPad, inputPadFragment).commit();
 		 passwordEt = (EditText)findViewById(R.id.password);
