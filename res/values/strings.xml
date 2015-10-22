@@ -56,9 +56,9 @@
     <string name="alipay_title">支付宝支付</string>
     <string name="trans_success">交易成功</string>
     <string name="tv_chaier">收银</string>
-    <string name="tv_chaier_two">收银</string>
+    <string name="tv_chaier_two">收银：</string>
     <string name="yuan">元</string>
-    <string name="tv_reduce">扣减</string>
+    <string name="tv_reduce">扣减：</string>
     <string name="tv_pay">支付</string>
     <string name="btn_back_cashier">返回收银</string>
     <string name="card_bank_pay_title">银行卡</string>
@@ -66,9 +66,9 @@
     <string name="q_wallet_title">QQ钱包</string>
     <string name="bai_du_pay">百度钱包</string>
     <string name="trans_amount_zero">0.00</string>
-    <string name="used_pay">应收</string>
-    <string name="real_pay">实收</string>
-    <string name="charge_amount">找零</string>
+    <string name="used_pay">应收：</string>
+    <string name="real_pay">实收：</string>
+    <string name="charge_amount">找零：</string>
     <string name="please_input_ticket_num">请输入券号</string>
     <string name="scan">扫描</string>
     <string name="host_ip">  cashier2.wizarpos.com</string>
@@ -81,7 +81,7 @@
     <string name="member_card_title">会员卡</string>
     <string name="wepay_card_title">微信会员卡</string>
     <string name="scan_card">刷卡</string>
-    <string name="scan_card_two">刷卡</string>
+    <string name="scan_card_two">刷卡：</string>
     <string name="success">收款成功 !</string>
     <string name="work_loading">工作台加载中......</string>
     <string name="please_scan_card">请刷卡</string>
