@@ -23,13 +23,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.EditText;
 
 /**
  * 
  * @author hong 登陆界面
  */
-public class LoginActivity extends TransactionActivity implements LoginPresenterListener, ThirdAppListener{
+public class LoginActivity extends TransactionActivity implements LoginPresenterListener, ThirdAppListener {
 	private LoginPresenter2 loginpresenter;
 	private InputPadFragment inputPadFragment;
 	private EditText userNameEt = null;
@@ -42,29 +43,32 @@ public class LoginActivity extends TransactionActivity implements LoginPresenter
 		initView();
 		loginpresenter = new LoginPresenter2(this);
 		loginpresenter.handleIntent(null);
-		if(thirdAppController.isInservice()){
+		if (thirdAppController.isInservice()) {
 			getPubCertificate();
 		}
 	}
-	private void initThirdAppController(){
+
+	private void initThirdAppController() {
 		thirdAppController = ThirdAppTransactionController.getInstance();
 		thirdAppController.setThridAppFinisher(this);
 		thirdAppController.parseRequest(getIntent());
 	}
-	//获取证书
-	private void getPubCertificate(){
+
+	// 获取证书
+	private void getPubCertificate() {
 		progresser.showProgress();
 		DeviceManager.getInstance().getPubCertificate(new ResultListener() {
-			
+
 			@Override
 			public void onSuccess(Response response) {
 				progresser.showContent();
 			}
-			
+
 			@Override
 			public void onFaild(Response response) {
 				progresser.showContent();
-				com.wizarpos.pay.common.DialogHelper.showDialog(LoginActivity.this, response.msg,new com.wizarpos.pay.common.DialogHelper.DialogCallback() {
+				com.wizarpos.pay.common.DialogHelper.showDialog(LoginActivity.this, response.msg,
+						new com.wizarpos.pay.common.DialogHelper.DialogCallback() {
 					@Override
 					public void callback() {
 						back();
@@ -73,6 +77,7 @@ public class LoginActivity extends TransactionActivity implements LoginPresenter
 			}
 		});
 	}
+
 	private void initView() {
 		setMainView(R.layout.activity_login);
 		setTitleText("登陆");
@@ -80,11 +85,24 @@ public class LoginActivity extends TransactionActivity implements LoginPresenter
 		passwordEt = (EditText) findViewById(R.id.loginPassword);
 		inputPadFragment = new InputPadFragment();
 		getSupportFragmentManager().beginTransaction().replace(R.id.flInputPad, inputPadFragment).commit();
-		inputPadFragment.setEditView(userNameEt, InputType.TYPE_INPUT_NORMAL);
 		setOnClickListenerById(R.id.btn_back, this);
 		setOnClickListenerById(R.id.btn_confirm, this);
-		inputPadFragment.setEditView(passwordEt, InputType.TYPE_INPUT_PWD);
-		inputPadFragment.setEditView(userNameEt, InputType.TYPE_INPUT_NORMAL);
+		inputPadFragment = InputPadFragment.newInstance(InputPadFragment.KEYBOARDTYPE_SIMPLE);
+		getSupportFragmentManager().beginTransaction().replace(R.id.flInputPad, inputPadFragment).commit();
+		userNameEt.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				inputPadFragment.setEditView(userNameEt, InputType.TYPE_INPUT_NORMAL);
+			}
+		});
+		passwordEt.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				inputPadFragment.setEditView(passwordEt, InputType.TYPE_INPUT_NORMAL);
+			}
+		});
 	}
 
 	@Override
@@ -97,16 +115,19 @@ public class LoginActivity extends TransactionActivity implements LoginPresenter
 		case R.id.btn_confirm:
 			String username = userNameEt.getText().toString();
 			String password = passwordEt.getText().toString();
-			UIHelper.hideSoftInput(this); 
+			UIHelper.hideSoftInput(this);
 			Log.d("TAG", "username is :" + username + " password is :" + password);
 			doLogin("00", "111111");
 			break;
+
 		}
 	}
-	private void doLogin(String username,String password){
+
+	private void doLogin(String username, String password) {
 		progresser.showProgress();
 		loginpresenter.login(username, password);
 	}
+
 	@Override
 	public void onLoginSuccess(Response response) {
 		if (thirdAppController.isInservice()) {
@@ -116,8 +137,9 @@ public class LoginActivity extends TransactionActivity implements LoginPresenter
 			startNewActivity(MainMenuActivity.class);
 			AppStateManager.setState(AppStateDef.isLogin, Constants.TRUE);
 		}
-		
+
 	}
+
 	@Override
 	protected void back() {
 		try {
@@ -135,6 +157,7 @@ public class LoginActivity extends TransactionActivity implements LoginPresenter
 			finish();
 		}
 	}
+
 	@Override
 	public void onLoginFaild(Response response) {
 		progresser.showContent();
@@ -152,8 +175,9 @@ public class LoginActivity extends TransactionActivity implements LoginPresenter
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
+
 	@Override
 	protected void onDestroy() {
 		loginpresenter.onDestory();
