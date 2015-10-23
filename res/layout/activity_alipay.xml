@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
-        android:background="#FFFFFF"
+        android:background="@android:color/transparent"
         android:gravity="center"
         android:orientation="horizontal" >
 
@@ -22,7 +22,7 @@
             android:onClick="back"
             android:text="返回"
             android:textColor="@android:color/white"
-            android:textSize="28dp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/wp_btn_change_qrcode"
@@ -69,26 +69,26 @@
             android:orientation="horizontal" >
 
             <Button
-                android:id="@+id/zhu_sao_pay"
+                android:id="@+id/scan_qrcode_pay"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/white"
-                android:onClick="zhuSaoPay"
-                android:text="主扫支付"
-                android:textColor="@color/table_view_title_text_color"
-                android:textSize="28dp" />
+                android:text="被扫支付"
+                android:textColor="@color/blue_color"
+                android:textSize="28sp" />
 
             <Button
-                android:id="@+id/bei_sao_pay"
+                android:id="@+id/scanned_qrcode_pay"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/white"
-                android:onClick="beiSaoPay"
-                android:text="被扫支付"
+                android:text="主扫支付"
                 android:textColor="@color/table_view_title_text_color"
-                android:textSize="28dp" />
+                android:textSize="28sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -99,14 +99,14 @@
             android:weightSum="2" >
 
             <TextView
-                android:id="@+id/line_zhu_sao"
+                android:id="@+id/line_scan_qrcode"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/blue_color" />
 
             <TextView
-                android:id="@+id/line_bei_sao"
+                android:id="@+id/line_scanned_qrcode"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

@@ -17,31 +17,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="被扫支付"
+            android:text="扫描二维码支付"
             android:textColor="#666666" />
 
-        <com.wizarpos.barcode.scanner.ScannerRelativeLayout
-            android:id="@+id/re_scanner_progress"
+        <ImageView
+            android:id="@+id/alipay_qr_code_1"
             android:layout_width="280dp"
             android:layout_height="280dp"
-            android:background="#FFFFFF" />
+            android:src="@color/blue_color" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="被扫支付订单号："
-            android:textColor="#666666"
+            android:text="二维码支付订单号："
+            android:textColor="@color/table_view_title_text_color"
             android:textSize="25sp"
             android:visibility="invisible" />
 
         <TextView
-            android:id="@+id/tvBeiSaoOrderNo"
-            android:layout_width="match_parent"
+            android:id="@+id/tv_order_no"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:textColor="@color/table_view_title_text_color"
             android:textSize="25sp"
-            android:textColor="#666666"
             android:visibility="invisible" />
     </LinearLayout>
 
@@ -51,6 +49,14 @@
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/aa_tv_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="打印订单二维码，由顾客扫描进行支付"
+            android:textColor="@color/table_view_title_text_color"
+            android:textSize="25sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,7 +71,7 @@
                 android:textSize="25sp" />
 
             <TextView
-                android:id="@+id/aa_tv_order_amount"
+                android:id="@+id/tv_order_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#FF4500"
@@ -81,24 +87,13 @@
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/aa_tv_order_state"
+            android:id="@+id/tv_order_state"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:gravity="center"
             android:text="--"
             android:textColor="@color/orange_color"
-            android:textSize="25sp" />
-
-        <EditText
-            android:id="@+id/et_sacn_code"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:gravity="center"
-            android:singleLine="true"
-            android:textColor="@android:color/black"
             android:textSize="25sp" />
     </LinearLayout>
 
