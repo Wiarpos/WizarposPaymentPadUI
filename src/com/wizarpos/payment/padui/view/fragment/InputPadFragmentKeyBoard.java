@@ -79,7 +79,7 @@ public class InputPadFragmentKeyBoard extends Fragment implements OnClickListene
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View inputPadView = inflater.inflate(R.layout.fragment_inputpad, container, false);
+		View inputPadView = inflater.inflate(R.layout.fragment_inputpad_keyboard, container, false);
 		View v0 = inputPadView.findViewById(R.id.iv0);
 		v0.setTag("0");
 		View v1 = inputPadView.findViewById(R.id.iv1);

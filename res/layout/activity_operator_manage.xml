@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:gravity="center"
-    android:background="@drawable/bg"
     android:orientation="vertical" >
 	<LinearLayout
         android:layout_width="match_parent"
@@ -14,13 +13,13 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:orientation="vertical" >
-
-        <LinearLayout
-            android:id="@+id/tl_ly_merchant_card_list"
+		
+        <ListView
+            android:id="@+id/cashier_data_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-        </LinearLayout>
+        </ListView>
     </LinearLayout>
    <LinearLayout
         android:layout_width="match_parent"

@@ -18,6 +18,7 @@ import com.wizarpos.payment.padui.cashier.activity.TransactionActivity;
 import com.wizarpos.payment.padui.thirdapp.ThirdAppBroadcastReceiver.ThirdAppListener;
 import com.wizarpos.payment.padui.view.fragment.InputPadFragment;
 import com.wizarpos.payment.padui.view.fragment.InputPadFragment.InputType;
+import com.wizarpos.payment.padui.view.fragment.InputPadFragmentKeyBoard;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,7 +33,7 @@ import android.widget.EditText;
  */
 public class LoginActivity extends TransactionActivity implements LoginPresenterListener, ThirdAppListener {
 	private LoginPresenter2 loginpresenter;
-	private InputPadFragment inputPadFragment;
+	private InputPadFragmentKeyBoard inputPadFragmentKeyBoard;
 	private EditText userNameEt = null;
 	private EditText passwordEt = null;
 
@@ -83,24 +84,23 @@ public class LoginActivity extends TransactionActivity implements LoginPresenter
 		setTitleText("登陆");
 		userNameEt = (EditText) findViewById(R.id.loginName);
 		passwordEt = (EditText) findViewById(R.id.loginPassword);
-		inputPadFragment = new InputPadFragment();
-		getSupportFragmentManager().beginTransaction().replace(R.id.flInputPad, inputPadFragment).commit();
+		inputPadFragmentKeyBoard = InputPadFragmentKeyBoard.newInstance(InputPadFragmentKeyBoard.KEYBOARDTYPE_SIMPLE);
+		getSupportFragmentManager().beginTransaction().replace(R.id.flInputPad, inputPadFragmentKeyBoard).commit();
 		setOnClickListenerById(R.id.btn_back, this);
 		setOnClickListenerById(R.id.btn_confirm, this);
-		inputPadFragment = InputPadFragment.newInstance(InputPadFragment.KEYBOARDTYPE_SIMPLE);
-		getSupportFragmentManager().beginTransaction().replace(R.id.flInputPad, inputPadFragment).commit();
+		getSupportFragmentManager().beginTransaction().replace(R.id.flInputPad, inputPadFragmentKeyBoard).commit();
 		userNameEt.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				inputPadFragment.setEditView(userNameEt, InputType.TYPE_INPUT_NORMAL);
+				inputPadFragmentKeyBoard.setEditView(userNameEt, com.wizarpos.payment.padui.view.fragment.InputPadFragmentKeyBoard.InputType.TYPE_INPUT_NORMAL);
 			}
 		});
 		passwordEt.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				inputPadFragment.setEditView(passwordEt, InputType.TYPE_INPUT_NORMAL);
+				inputPadFragmentKeyBoard.setEditView(passwordEt, com.wizarpos.payment.padui.view.fragment.InputPadFragmentKeyBoard.InputType.TYPE_INPUT_NORMAL);
 			}
 		});
 	}
