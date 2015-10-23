@@ -2174,6 +2174,9 @@ containing a value of this type.
         /**  Whether action menu items should obey the "withText" showAsAction
     flag. This may be set to false for situations where space is
     extremely limited. 
+ Whether action menu items should obey the "withText" showAsAction.
+         This may be set to false for situations where space is
+         extremely limited. 
          */
         public static final int abc_config_allowActionMenuItemTextWithIcon=0x7f050004;
         public static final int abc_config_closeDialogWhenTouchOutside=0x7f050006;
@@ -2842,27 +2845,35 @@ containing a value of this type.
     }
     public static final class dimen {
         /**  Default content inset of an action bar. 
+ Default content inset of an action bar. 
          */
-        public static final int abc_action_bar_content_inset_material=0x7f070026;
+        public static final int abc_action_bar_content_inset_material=0x7f070028;
         /**  Default height of an action bar. 
+ Default height of an action bar. 
+ Default height of an action bar. 
          */
-        public static final int abc_action_bar_default_height_material=0x7f070024;
+        public static final int abc_action_bar_default_height_material=0x7f070026;
         /**  Default padding of an action bar. 
+ Default padding of an action bar. 
+ Default padding of an action bar. 
          */
-        public static final int abc_action_bar_default_padding_material=0x7f070025;
+        public static final int abc_action_bar_default_padding_material=0x7f070027;
         /**  Vertical padding around action bar icons. 
          */
-        public static final int abc_action_bar_icon_vertical_padding_material=0x7f070027;
+        public static final int abc_action_bar_icon_vertical_padding_material=0x7f07002b;
         /**  Padding to add to the start of the overflow action button. 
+ Padding to add to the start of the overflow action button. 
          */
-        public static final int abc_action_bar_navigation_padding_start_material=0x7f07002b;
+        public static final int abc_action_bar_navigation_padding_start_material=0x7f070029;
         /**  Padding to add to the end of the overflow action button. 
+ Padding to add to the end of the overflow action button. 
          */
-        public static final int abc_action_bar_overflow_padding_end_material=0x7f07002d;
+        public static final int abc_action_bar_overflow_padding_end_material=0x7f07002a;
         /**  Padding to add to the start of the overflow action button. 
          */
-        public static final int abc_action_bar_overflow_padding_start_material=0x7f07002c;
+        public static final int abc_action_bar_overflow_padding_start_material=0x7f07002f;
         /**  Size of the indeterminate Progress Bar 
+ Size of the indeterminate Progress Bar 
          */
         public static final int abc_action_bar_progress_bar_size=0x7f070005;
         /**  Maximum height for a stacked tab bar as part of an action bar 
@@ -2875,14 +2886,15 @@ containing a value of this type.
         public static final int abc_action_bar_stacked_tab_max_width=0x7f070003;
         /**  Bottom margin for action bar subtitles 
          */
-        public static final int abc_action_bar_subtitle_bottom_margin_material=0x7f070029;
+        public static final int abc_action_bar_subtitle_bottom_margin_material=0x7f07002d;
         /**  Top margin for action bar subtitles 
          */
-        public static final int abc_action_bar_subtitle_top_margin_material=0x7f070028;
-        public static final int abc_action_button_min_height_material=0x7f070030;
-        public static final int abc_action_button_min_width_material=0x7f07002f;
-        public static final int abc_action_button_min_width_overflow_material=0x7f07002e;
+        public static final int abc_action_bar_subtitle_top_margin_material=0x7f07002c;
+        public static final int abc_action_button_min_height_material=0x7f070032;
+        public static final int abc_action_button_min_width_material=0x7f070031;
+        public static final int abc_action_button_min_width_overflow_material=0x7f070030;
         /**  Dialog button bar height 
+ Dialog button bar height 
          */
         public static final int abc_alert_dialog_button_bar_height=0x7f07001d;
         public static final int abc_button_inset_horizontal_material=0x7f070011;
@@ -2894,6 +2906,8 @@ containing a value of this type.
         /**  The maximum width we would prefer dialogs to be.  0 if there is no
     maximum (let them grow as large as the screen).  Actual values are
     specified for -large and -xlarge configurations. 
+ see comment in values/config.xml 
+ see comment in values/config.xml 
          */
         public static final int abc_config_prefDialogWidth=0x7f070002;
         /**  Default rounded corner for controls 
@@ -2936,12 +2950,14 @@ containing a value of this type.
         /**  Default padding for list items. This should match the action bar
          content inset so that ListActivity items line up correctly. 
          */
-        public static final int abc_list_item_padding_horizontal_material=0x7f07002a;
+        public static final int abc_list_item_padding_horizontal_material=0x7f07002e;
         public static final int abc_panel_menu_list_width=0x7f070006;
         /**  Preferred width of the search view. 
          */
         public static final int abc_search_view_preferred_width=0x7f070008;
         /**  Minimum width of the search view text entry area. 
+ Minimum width of the search view text entry area. 
+ Minimum width of the search view text entry area. 
  Minimum width of the search view text entry area. 
  Minimum width of the search view text entry area. 
          */
@@ -2954,19 +2970,25 @@ containing a value of this type.
         public static final int abc_text_size_body_2_material=0x7f07003b;
         public static final int abc_text_size_button_material=0x7f07003e;
         public static final int abc_text_size_caption_material=0x7f07003d;
-        public static final int abc_text_size_display_1_material=0x7f070034;
-        public static final int abc_text_size_display_2_material=0x7f070033;
-        public static final int abc_text_size_display_3_material=0x7f070032;
-        public static final int abc_text_size_display_4_material=0x7f070031;
-        public static final int abc_text_size_headline_material=0x7f070035;
+        public static final int abc_text_size_display_1_material=0x7f070036;
+        public static final int abc_text_size_display_2_material=0x7f070035;
+        public static final int abc_text_size_display_3_material=0x7f070034;
+        public static final int abc_text_size_display_4_material=0x7f070033;
+        public static final int abc_text_size_headline_material=0x7f070037;
         public static final int abc_text_size_large_material=0x7f07003f;
         public static final int abc_text_size_medium_material=0x7f070040;
         public static final int abc_text_size_menu_material=0x7f07003a;
         public static final int abc_text_size_small_material=0x7f070041;
-        public static final int abc_text_size_subhead_material=0x7f070037;
-        public static final int abc_text_size_subtitle_material_toolbar=0x7f070039;
-        public static final int abc_text_size_title_material=0x7f070036;
-        public static final int abc_text_size_title_material_toolbar=0x7f070038;
+        public static final int abc_text_size_subhead_material=0x7f070039;
+        /**  Use the default subtitle sizes on tablets. 
+ Default text size for action bar subtitle.
+         */
+        public static final int abc_text_size_subtitle_material_toolbar=0x7f070025;
+        public static final int abc_text_size_title_material=0x7f070038;
+        /**  Use the default title sizes on tablets. 
+ Default text size for action bar title.
+         */
+        public static final int abc_text_size_title_material_toolbar=0x7f070024;
         public static final int activity_alipay_native_top=0x7f070063;
         public static final int activity_cash_pay_success_top=0x7f070062;
         /**  Default screen margins, per the Android Design guidelines. 
@@ -2990,9 +3012,13 @@ containing a value of this type.
          (the screen is in portrait). This may be either a fraction or a dimension.
  The platform's desired fixed height for a dialog along the major axis
          (the screen is in portrait). This may be either a fraction or a dimension.
+ The platform's desired fixed height for a dialog along the major axis
+         (the screen is in portrait). This may be either a fraction or a dimension.
          */
         public static final int dialog_fixed_height_major=0x7f07000e;
         /**  The platform's desired fixed height for a dialog along the minor axis
+         (the screen is in landscape). This may be either a fraction or a dimension.
+ The platform's desired fixed height for a dialog along the minor axis
          (the screen is in landscape). This may be either a fraction or a dimension.
  The platform's desired fixed height for a dialog along the minor axis
          (the screen is in landscape). This may be either a fraction or a dimension.
@@ -3002,9 +3028,13 @@ containing a value of this type.
          (the screen is in landscape). This may be either a fraction or a dimension.
  The platform's desired fixed width for a dialog along the major axis
          (the screen is in landscape). This may be either a fraction or a dimension.
+ The platform's desired fixed width for a dialog along the major axis
+         (the screen is in landscape). This may be either a fraction or a dimension.
          */
         public static final int dialog_fixed_width_major=0x7f07000c;
         /**  The platform's desired fixed width for a dialog along the minor axis
+         (the screen is in portrait). This may be either a fraction or a dimension.
+ The platform's desired fixed width for a dialog along the minor axis
          (the screen is in portrait). This may be either a fraction or a dimension.
  The platform's desired fixed width for a dialog along the minor axis
          (the screen is in portrait). This may be either a fraction or a dimension.
@@ -3539,6 +3569,21 @@ containing a value of this type.
          */
         public static final int abc_config_activityShortDur=0x7f080000;
         /**  The maximum number of action buttons that should be permitted within
+         an action bar/action mode. This will be used to determine how many
+         showAsAction="ifRoom" items can fit. "always" items can override this. 
+ The maximum number of action buttons that should be permitted within
+     an action bar/action mode. This will be used to determine how many
+     showAsAction="ifRoom" items can fit. "always" items can override this. 
+ The maximum number of action buttons that should be permitted within
+         an action bar/action mode. This will be used to determine how many
+         showAsAction="ifRoom" items can fit. "always" items can override this. 
+ The maximum number of action buttons that should be permitted within
+         an action bar/action mode. This will be used to determine how many
+         showAsAction="ifRoom" items can fit. "always" items can override this. 
+ The maximum number of action buttons that should be permitted within
+         an action bar/action mode. This will be used to determine how many
+         showAsAction="ifRoom" items can fit. "always" items can override this. 
+ The maximum number of action buttons that should be permitted within
          an action bar/action mode. This will be used to determine how many
          showAsAction="ifRoom" items can fit. "always" items can override this. 
  The maximum number of action buttons that should be permitted within
