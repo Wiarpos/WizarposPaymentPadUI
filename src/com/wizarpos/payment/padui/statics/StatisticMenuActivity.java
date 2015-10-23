@@ -1,5 +1,6 @@
 package com.wizarpos.payment.padui.statics;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -26,13 +27,13 @@ public class StatisticMenuActivity extends BaseViewActivity {
 		super.onClick(v);
 		switch (v.getId()) {
 		case R.id.sm_btn_tranlog_detail_menu:
-
+			startActivity(new Intent(StatisticMenuActivity.this,TransactionDetailActivity.class));
 			break;
 		case R.id.sm_btn_tranlog_sum_menu:
-
+			startActivity(new Intent(StatisticMenuActivity.this,TransactionGathingActivity.class));
 			break;
 		case R.id.sm_btn_tran_log_cancel_menu:
-
+			startActivity(new Intent(StatisticMenuActivity.this,TransactionCancleActivity.class));
 			break;
 		default:
 			break;
