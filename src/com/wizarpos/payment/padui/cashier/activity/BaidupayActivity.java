@@ -1,7 +1,5 @@
 package com.wizarpos.payment.padui.cashier.activity;
 
-import com.wizarpos.payment.padui.common.BaseViewActivity;
-
 import android.os.Bundle;
 /**
  * 
@@ -9,7 +7,7 @@ import android.os.Bundle;
  * 百度钱包支付
  *
  */
-public class BaidupayActivity extends BaseViewActivity {
+public class BaidupayActivity extends TransactionActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
