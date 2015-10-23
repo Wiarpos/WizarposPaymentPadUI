@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="18"
+        android:minSdkVersion="15"
         android:targetSdkVersion="21" />
 
     <application
@@ -26,6 +26,7 @@
         <activity android:name="com.wizarpos.payment.padui.manage.OperatorManageActivity"/>
         <activity android:name="com.wizarpos.payment.padui.manage.InputPasswordActivity"/>
         <activity android:name="com.wizarpos.payment.padui.setting.SettingMainMenActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.statics.StatisticMenuActivity"/>
     </application>
 
 </manifest>

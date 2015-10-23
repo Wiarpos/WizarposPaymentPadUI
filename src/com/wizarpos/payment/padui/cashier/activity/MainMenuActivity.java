@@ -4,6 +4,7 @@ import com.wizarpos.payment.padui.R;
 import com.wizarpos.payment.padui.common.BaseViewActivity;
 import com.wizarpos.payment.padui.manage.InputPasswordActivity;
 import com.wizarpos.payment.padui.manage.OperatorManageActivity;
+import com.wizarpos.payment.padui.statics.StatisticMenuActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,6 +39,7 @@ public class MainMenuActivity extends BaseViewActivity {
 			startActivity(new Intent(MainMenuActivity.this,OperatorManageActivity.class));
 			break;
 		case R.id.btn_query_cancle://查询撤销
+			startActivity(new Intent(MainMenuActivity.this, StatisticMenuActivity.class));
 			break;
 		case R.id.btn_setting://设置
 			startActivity(new Intent(MainMenuActivity.this,InputPasswordActivity.class));

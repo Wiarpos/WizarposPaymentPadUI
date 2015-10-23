@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:gravity="center" >
+
+    <!-- 第一行 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/sm_btn_tranlog_detail_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_selector_tranlog_detail"
+            android:gravity="right|bottom"
+            android:paddingBottom="10dp"
+            android:paddingRight="10dp"
+            android:text="交易明细"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/sm_btn_tranlog_sum_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_selector_tranlog_sum"
+            android:gravity="right|bottom"
+            android:paddingBottom="10dp"
+            android:paddingRight="10dp"
+            android:text="汇总查询"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/sm_btn_tran_log_cancel_menu"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_selector_tranlog_cancel"
+            android:gravity="right|bottom"
+            android:paddingBottom="10dp"
+            android:paddingRight="10dp"
+            android:text="交易撤销"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
