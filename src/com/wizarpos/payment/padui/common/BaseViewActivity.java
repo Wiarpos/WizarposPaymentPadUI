@@ -217,5 +217,9 @@ public class BaseViewActivity extends BaseActivity implements OnClickListener, O
 		}
 		return false;
 	}
-
+	
+	public final void back (View v) {
+		this.finish();
+	}
+	
 }
