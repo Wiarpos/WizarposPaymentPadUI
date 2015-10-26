@@ -88,7 +88,6 @@ public class LoginActivity extends TransactionActivity implements LoginPresenter
 		getSupportFragmentManager().beginTransaction().replace(R.id.flInputPad, inputPadFragmentKeyBoard).commit();
 		setOnClickListenerById(R.id.btn_back, this);
 		setOnClickListenerById(R.id.btn_confirm, this);
-		getSupportFragmentManager().beginTransaction().replace(R.id.flInputPad, inputPadFragmentKeyBoard).commit();
 		userNameEt.setOnClickListener(new OnClickListener() {
 
 			@Override

@@ -9,7 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wizarpos.payment.padui.R;
-
+/**
+ * 主扫支付
+ *
+ */
 public class ScannedQrcodeFragment extends Fragment{
 	private ImageView ivQrcode;
 	private TextView tvOrderNo,tvOrderAmount,tvOrderState;

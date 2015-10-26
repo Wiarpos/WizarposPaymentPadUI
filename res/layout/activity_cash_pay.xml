@@ -293,6 +293,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1dp"
+                android:padding="20dp"
                 android:background="@color/layout_btn_background_color"
                 android:gravity="center" >
 
