@@ -158,6 +158,13 @@
         <activity android:name="com.wizarpos.payment.padui.cashier.activity.TenpayActivity"/>
         <activity android:name="com.wizarpos.payment.padui.cashier.activity.TicketUseActivity"/>
         <activity android:name="com.wizarpos.payment.padui.cashier.activity.WepayActivty"/>
-    </application>
+   		 <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="55cab823e0f55ad2c300389a" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Umeng" />
+        </application>
 
 </manifest>

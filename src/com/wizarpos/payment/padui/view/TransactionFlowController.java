@@ -1,6 +1,8 @@
 package com.wizarpos.payment.padui.view;
 
 import com.wizarpos.pay.cashier.presenter.ITransactionFlowController;
+import com.wizarpos.payment.padui.cashier.activity.CashPayActivity;
+import com.wizarpos.payment.padui.cashier.activity.PaySuccessActivity;
 import com.wizarpos.payment.padui.common.BaseViewActivity;
 
 import android.app.Activity;
@@ -48,8 +50,8 @@ public class TransactionFlowController extends BaseViewActivity implements ITran
 	//现金
 	@Override
 	public void toCashTransactionView(Activity activity, Intent intent) {
-		// TODO Auto-generated method stub
-		
+		intent.setClass(activity, CashPayActivity.class);
+		startActivity(intent);
 	}
 	//组合支付现金
 	@Override
@@ -186,7 +188,8 @@ public class TransactionFlowController extends BaseViewActivity implements ITran
 
 	@Override
 	public void toTransactionSuccess(Activity activity, Intent intent) {
-		// TODO Auto-generated method stub
+		intent.setClass(activity, PaySuccessActivity.class);
+		startAcitvityAndResetTimer(activity, intent);
 		
 	}
 
@@ -230,6 +233,15 @@ public class TransactionFlowController extends BaseViewActivity implements ITran
 	public void toMixNormalTicketPass(Activity activity, Intent intent, int requestCode) {
 		// TODO Auto-generated method stub
 		
+	}
+	private void startAcitvityAndResetTimer(Activity activity, Intent intent) {
+		// TODO 加入计时器
+		activity.startActivity(intent);
+	}
+
+	private void startAcitvityForResultAndResetTimer(Activity activity, Intent intent, int requestCode) {
+		// TODO 加入计时器
+		activity.startActivityForResult(intent, requestCode);
 	}
 
 }

@@ -31,7 +31,9 @@ public class MainMenuActivity extends TransactionActivity {
 		super.onClick(v);
 		switch (v.getId()) {
 		case R.id.btn_cash://收款
-			startActivity(new Intent(MainMenuActivity.this,AlipayActivity.class));
+			Intent intent = new Intent();
+			intent.putExtra("initAmount", "100");
+			toCashTransactionView(this, intent);
 			break;
 		case R.id.btn_manage://操作员管理
 			startActivity(new Intent(MainMenuActivity.this,OperatorManageActivity.class));

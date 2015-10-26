@@ -11,6 +11,7 @@
     <color name="red_color">#E51400</color>
     <color name="layout_btn_background_color">#F3F3F3</color>
     <color name="keyboard_background_color">#C0C0C0</color>
+    <color name="paysuccess_background_color">#D5D5D5</color>
     <!-- 红色 -->
     <color name="green_color">#339933</color>
     <!-- 绿色 -->

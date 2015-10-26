@@ -24,24 +24,24 @@ public class TransactionActivity extends TransactionFlowController implements Th
 	/**
 	 * 注册交易监听广播
 	 */
-	protected void registerReceiver(ThirdAppListener listener, String action) {
-		receiver = new ThirdAppBroadcastReceiver();
-		receiver.setListener(listener);
-		IntentFilter filter = new IntentFilter(action);
-		LocalBroadcastManager.getInstance(this).registerReceiver(receiver, filter);
-	}
+//	protected void registerReceiver(ThirdAppListener listener, String action) {
+//		receiver = new ThirdAppBroadcastReceiver();
+//		receiver.setListener(listener);
+//		IntentFilter filter = new IntentFilter(action);
+//		LocalBroadcastManager.getInstance(this).registerReceiver(receiver, filter);
+//	}
 
 	/**
 	 * 取消注册交易监听广播
 	 */
-	protected void unregisterReceiver() {
-		try {
-			if (receiver != null) {
-				LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
-			}
-		} catch (Exception e) {
-		}
-	}
+//	protected void unregisterReceiver() {
+//		try {
+//			if (receiver != null) {
+//				LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
+//			}
+//		} catch (Exception e) {
+//		}
+//	}
 
 	@Override
 	public void onBackPressed() {// 禁用返回按钮
