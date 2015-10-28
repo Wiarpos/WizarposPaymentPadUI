@@ -86,7 +86,6 @@ public class CashPayActivity extends TransactionActivity {
 			trans();
 			break;
 		case R.id.pay_ticket://扫描获取券号
-
 			break;
 		default:
 			break;

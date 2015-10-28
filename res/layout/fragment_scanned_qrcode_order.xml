@@ -26,21 +26,6 @@
             android:layout_height="280dp"
             android:src="@color/blue_color" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="二维码支付订单号："
-            android:textColor="@color/table_view_title_text_color"
-            android:textSize="25sp"
-            android:visibility="invisible" />
-
-        <TextView
-            android:id="@+id/tv_order_no"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/table_view_title_text_color"
-            android:textSize="25sp"
-            android:visibility="invisible" />
     </LinearLayout>
 
     <LinearLayout
