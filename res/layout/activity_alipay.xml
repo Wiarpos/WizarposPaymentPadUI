@@ -36,7 +36,7 @@
             android:textColor="@android:color/white" />
 
         <Button
-            android:id="@+id/wp_btn_print_weichat_pay_qr_code"
+            android:id="@+id/print_qrcode"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -113,11 +113,105 @@
                 android:background="@color/gray_color" />
         </LinearLayout>
 
-        <FrameLayout
-            android:id="@+id/fl_BAT_Fragment"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-        </FrameLayout>
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/show_native_menu"
+                android:layout_width="0dp"
+                android:visibility="gone"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginBottom="100dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="扫描二维码支付"
+                    android:textColor="#666666" />
+
+                <ImageView
+                    android:id="@+id/qr_code"
+                    android:layout_width="280dp"
+                    android:layout_height="280dp"
+                   />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/show_micro_menu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="100dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <FrameLayout
+                    android:id="@+id/fl_BAT_Fragment"
+                    android:layout_width="280dp"
+                    android:layout_height="280dp" >
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/native_remind"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="打印订单二维码，由顾客扫描进行支付"
+                    android:textColor="@color/table_view_title_text_color"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="金    额："
+                        android:textColor="#666666"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/tv_order_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="25sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/aa_tv_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="6"
+                    android:textColor="#666666"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tv_order_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="--"
+                    android:textColor="@color/orange_color"
+                    android:textSize="25sp" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

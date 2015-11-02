@@ -147,17 +147,18 @@
         <activity android:name="com.wizarpos.payment.padui.statics.TransactionDetailActivity"/>
         <activity android:name="com.wizarpos.payment.padui.statics.TransactionGathingActivity"/>
         <activity android:name="com.wizarpos.payment.padui.statics.StaticsMainMenuActivity"/>
-        <activity android:name="com.wizarpos.payment.padui.cashier.activity.AlipayActivity"/>
-        <activity android:name="com.wizarpos.payment.padui.cashier.activity.BaidupayActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.paymentterm.AlipayActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.paymentterm.BaidupayActivity"/>
         <activity android:name="com.wizarpos.payment.padui.cashier.activity.BankCardPayActivity"/>
         <activity android:name="com.wizarpos.payment.padui.cashier.activity.CashPayActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.ThirdpayActivity"/>
         <activity android:name="com.wizarpos.payment.padui.cashier.activity.MemberCardPayActivity"/>
         <activity android:name="com.wizarpos.payment.padui.cashier.activity.OtherpayActivity"/>
         <activity android:name="com.wizarpos.payment.padui.cashier.activity.PaymentMainMenuActivity"/>
         <activity android:name="com.wizarpos.payment.padui.cashier.activity.PaySuccessActivity"/>
-        <activity android:name="com.wizarpos.payment.padui.cashier.activity.TenpayActivity"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.paymentterm.TenpayActivity"/>
         <activity android:name="com.wizarpos.payment.padui.cashier.activity.TicketUseActivity"/>
-        <activity android:name="com.wizarpos.payment.padui.cashier.activity.WepayActivty"/>
+        <activity android:name="com.wizarpos.payment.padui.cashier.activity.paymentterm.WepayActivty"/>
    		 <meta-data
             android:name="UMENG_APPKEY"
             android:value="55cab823e0f55ad2c300389a" >

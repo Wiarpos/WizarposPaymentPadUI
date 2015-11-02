@@ -1,6 +1,7 @@
-package com.wizarpos.payment.padui.cashier.activity;
+package com.wizarpos.payment.padui.cashier.activity.paymentterm;
 
 import com.wizarpos.payment.padui.R;
+import com.wizarpos.payment.padui.cashier.activity.TransactionActivity;
 import com.wizarpos.payment.padui.view.fragment.ScanQrcodeFragment;
 
 import android.os.Bundle;
@@ -31,7 +32,7 @@ public class TenpayActivity extends TransactionActivity {
 	public void onClick(View v) {
 		super.onClick(v);
 		switch (v.getId()) {
-		case R.id.wp_btn_check_order_state:
+		case R.id.wp_btn_check_order_state://检查订单状态
 			
 			break;
 		default:

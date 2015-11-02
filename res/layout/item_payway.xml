@@ -8,13 +8,14 @@
     <Button
         android:id="@+id/btPayWay"
         style= "?android:attr/buttonBarButtonStyle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_selector_biaoqian"
         android:drawableTop="@drawable/btn_selector_bank_card_pay"
         android:enabled="true"
         android:paddingTop="20dp"
-         android:text= "银行卡"
+        android:paddingBottom="10dp"
+        android:text= "银行卡"
         android:textColor="@color/table_view_title_text_color"
         android:textSize="32sp" />
 

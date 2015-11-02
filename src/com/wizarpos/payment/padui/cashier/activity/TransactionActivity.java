@@ -3,7 +3,6 @@ package com.wizarpos.payment.padui.cashier.activity;
 import com.alibaba.fastjson.JSONObject;
 import com.wizarpos.pay.cashier.presenter.TransactionTemsController;
 import com.wizarpos.pay.cashier.thrid_app_controller.ThirdAppBroadcastReceiver;
-import com.wizarpos.pay.cashier.thrid_app_controller.ThirdAppBroadcastReceiver.ThirdAppListener;
 import com.wizarpos.pay.cashier.thrid_app_controller.ThirdAppFinisher;
 import com.wizarpos.pay.cashier.thrid_app_controller.ThirdAppTransactionController;
 import com.wizarpos.pay.cashier.thrid_app_controller.model.ThirdAppTransactionEXJsonResponse;
@@ -14,7 +13,6 @@ import com.wizarpos.pay.db.AppStateManager;
 import com.wizarpos.payment.padui.view.TransactionFlowController;
 
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
 
 public class TransactionActivity extends TransactionFlowController implements ThirdAppFinisher {
