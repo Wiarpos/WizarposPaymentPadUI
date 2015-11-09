@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 洋红。定义当button 处于pressed 状态时的形态。 -->
+    <item android:state_pressed="true">
+        <shape>
+            <gradient android:startColor="#BBFF0097" android:endColor="#BBFF0097" />
+        </shape>
+    </item>
+    
+    <item android:state_window_focused="false">
+       	<shape>
+            <gradient android:startColor="#FF0097" android:endColor="#FF0097" />
+        </shape>
+	</item>
+	
+</selector>

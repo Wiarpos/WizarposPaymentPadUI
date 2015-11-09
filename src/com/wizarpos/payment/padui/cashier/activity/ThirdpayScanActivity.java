@@ -66,6 +66,14 @@ public abstract class ThirdpayScanActivity extends BATActivity implements Displa
 	@Override
 	public void onClick(View v) {
 		super.onClick(v);
+		switch (v.getId()) {
+		case R.id.wp_btn_change_qrcode://切换摄像头
+			fragment.switchCamera();
+			break;
+
+		default:
+			break;
+		}
 	}
 	/**
 	 * 分发交易结果

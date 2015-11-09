@@ -13,13 +13,16 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:orientation="vertical" >
-
-        <LinearLayout
-            android:id="@+id/tl_ly_merchant_card_list"
+		<include
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" 
+		    layout="@layout/activity_transaction_sum_head"/>
+        <ListView
+            android:id="@+id/sum_list_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-        </LinearLayout>
+        </ListView>
     </LinearLayout>
    <LinearLayout
         android:layout_width="match_parent"

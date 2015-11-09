@@ -1,4 +1,4 @@
-package com.wizarpos.payment.padui.adapter;
+package com.wizarpos.payment.padui.cashier.adapter;
 
 import java.util.ArrayList;
 

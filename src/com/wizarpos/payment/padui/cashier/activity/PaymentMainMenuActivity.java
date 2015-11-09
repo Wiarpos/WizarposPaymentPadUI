@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import com.wizarpos.pay.common.utils.Calculater;
 import com.wizarpos.payment.padui.R;
-import com.wizarpos.payment.padui.adapter.PayWayAdapter;
-import com.wizarpos.payment.padui.adapter.PayWayAdapter.OnPayItemClick;
+import com.wizarpos.payment.padui.cashier.adapter.PayWayAdapter;
+import com.wizarpos.payment.padui.cashier.adapter.PayWayAdapter.OnPayItemClick;
 import com.wizarpos.payment.padui.common.Constants;
 import com.wizarpos.payment.padui.model.CommonDataBean;
 import com.wizarpos.payment.padui.view.fragment.InputPadFragment;

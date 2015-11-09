@@ -11,6 +11,7 @@
 	    android:layout_weight="1"
 	    android:layout_marginTop="50dp"
 	    android:layout_marginLeft="20dp"
+	    android:layout_marginRight="20dp"
 	    android:orientation="vertical"
 	    >
 	    <TextView android:layout_width="wrap_content"
@@ -21,13 +22,15 @@
 	        android:layout_height="wrap_content">
 	      <CheckBox android:layout_width="wrap_content"
 	          android:layout_height="wrap_content"
+	          android:layout_marginTop="10dp"
 	          android:layout_gravity="center_vertical"
 	          android:text="F"/>
 	    <EditText
-	        android:id="@+id/password"
+	        android:id="@+id/transation_code"
 	        android:layout_marginTop="20dp"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
+	        android:editable="false"
 	        android:background="@drawable/edit_input_selector"/>
 	    </LinearLayout>
 	    <TextView android:layout_width="wrap_content"

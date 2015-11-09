@@ -12,7 +12,6 @@
         android:background="@android:color/transparent"
         android:gravity="center"
         android:orientation="horizontal" >
-
         <Button
             android:id="@+id/wp_btn_back"
             style="?android:attr/buttonBarButtonStyle"
@@ -43,6 +42,7 @@
             android:layout_marginLeft="20dp"
             android:background="@drawable/btn_selector_nextpage"
             android:onClick="printQRCode"
+            android:visibility="gone"
             android:text="打印订单二维码"
             android:textColor="@android:color/white" />
 

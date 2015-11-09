@@ -9,68 +9,71 @@ import com.wizarpos.pay.common.Constants;
 import com.wizarpos.pay.common.base.BasePresenter.ResultListener;
 import com.wizarpos.pay.common.utils.Calculater;
 import com.wizarpos.pay.common.utils.UIHelper;
+import com.wizarpos.pay.model.OrderDef;
 import com.wizarpos.payment.padui.R;
 
-import android.R.integer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 /**
  * 
- * @author hong
- * 第三方支付
+ * @author hong 第三方支付
  *
  */
 public class ThirdpayActivity extends ThirdpayScanActivity {
-	private TextView lineScanQrcode,lineScannedQrcode;
-	private Button btnScan,btnScanned;
-	private MicroTransaction batMicroTransaction;//被扫
-	private NativeTransaction batNativeTransaction;//主扫
-	private String type = null;//支付类型
+	private TextView lineScanQrcode, lineScannedQrcode;
+	private Button btnScan, btnScanned;
+	private MicroTransaction batMicroTransaction;// 被扫
+	private NativeTransaction batNativeTransaction;// 主扫
+	private String type = null;// 支付类型
 	private String realAmount = null;
 	private TextView showAmount = null;
-	private String ivUrl;//显示二维码
-	private boolean MICRO_FLAG = true;//判断是主扫还是被扫
+	private String ivUrl;// 显示二维码
+	private boolean MICRO_FLAG = true;// 判断是主扫还是被扫
 	private Intent intent;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		getData();
 		initView();
 	}
-	private void getData(){
-		intent=getIntent();
+
+	private void getData() {
+		intent = getIntent();
 		type = intent.getStringExtra(com.wizarpos.payment.padui.common.Constants.PAYMENTTYPE);
-		realAmount = intent.getStringExtra(Constants.realAmount); //增加realAmount
-		if(TextUtils.isEmpty(realAmount)){
+		realAmount = intent.getStringExtra(Constants.realAmount); // 增加realAmount
+		if (TextUtils.isEmpty(realAmount)) {
 			realAmount = getIntent().getStringExtra(Constants.initAmount);
 			intent.putExtra(Constants.realAmount, realAmount);
 		}
 		batMicroTransaction = TransactionFactory.newBatMicroTransaction(this);
 		batNativeTransaction = TransactionFactory.newBatNativeTransaction(this);
-		
+
 	}
-	private void initView(){
+
+	private void initView() {
 		if (com.wizarpos.payment.padui.common.Constants.ALIPAY.equals(type)) {
 			setTitleText("支付宝支付");
 			intent.putExtra("payTypeFlag", Constants.ALIPAY_BAT);
-		}else if (com.wizarpos.payment.padui.common.Constants.WEPAY.equals(type)) {
+		} else if (com.wizarpos.payment.padui.common.Constants.WEPAY.equals(type)) {
 			setTitleText("微信支付");
 			intent.putExtra("payTypeFlag", Constants.WEPAY__BAT);
-		}else if (com.wizarpos.payment.padui.common.Constants.TENPAY.equals(type)) {
+		} else if (com.wizarpos.payment.padui.common.Constants.TENPAY.equals(type)) {
 			setTitleText("QQ钱包支付");
 			intent.putExtra("payTypeFlag", Constants.TENPAY_BAT);
-		}else if (com.wizarpos.payment.padui.common.Constants.BAIDUPAY.equals(type)) {
+		} else if (com.wizarpos.payment.padui.common.Constants.BAIDUPAY.equals(type)) {
 			setTitleText("百度钱包支付");
 			intent.putExtra("payTypeFlag", Constants.BAIDUPAY_BAT);
 		}
 		if (MICRO_FLAG) {
 			batMicroTransaction.handleIntent(intent);
-		}else {
-			 batNativeTransaction.handleIntent(intent);
+		} else {
+			batNativeTransaction.handleIntent(intent);
 		}
 		showAmount = (TextView) findViewById(R.id.tv_order_amount);
 		btnScan = (Button) findViewById(R.id.scan_qrcode_pay);
@@ -79,32 +82,94 @@ public class ThirdpayActivity extends ThirdpayScanActivity {
 		lineScanQrcode = (TextView) findViewById(R.id.line_scan_qrcode);
 		showAmount.setText(Calculater.formotFen(realAmount));
 	}
+
 	@Override
 	public void onClick(View v) {
 		super.onClick(v);
 		switch (v.getId()) {
-		case R.id.scan_qrcode_pay://被扫支付
+		case R.id.scan_qrcode_pay:// 被扫支付
+			fragment.doResume();
 			showMicroMenu();
-			getSupportFragmentManager().beginTransaction().add(R.id.fl_BAT_Fragment, fragment).commit();
 			break;
-		case R.id.scanned_qrcode_pay://主扫支付
+		case R.id.scanned_qrcode_pay:// 主扫支付
+			fragment.doPause();
 			batNativeTransaction.handleIntent(intent);
-			getSupportFragmentManager().beginTransaction().remove(fragment).commit();
 			showNativeMenu();
-			nativepay();
+			if (com.wizarpos.payment.padui.common.Constants.ALIPAY.equals(type)) {
+				nativepay(Constants.ALIPAY_BAT);
+			} else if (com.wizarpos.payment.padui.common.Constants.WEPAY.equals(type)) {
+				nativepay(Constants.WEPAY__BAT);
+			} else if (com.wizarpos.payment.padui.common.Constants.TENPAY.equals(type)) {
+				nativepay(Constants.TENPAY_BAT);
+			} else if (com.wizarpos.payment.padui.common.Constants.BAIDUPAY.equals(type)) {
+				nativepay(Constants.BAIDUPAY_BAT);
+			}
 			break;
-		case R.id.wp_btn_change_qrcode://切换摄像头
+		case R.id.print_qrcode:// 打印订单二维码
+			// TODO这部分需要一直到logic中
 			break;
-		case R.id.print_qrcode://打印订单二维码
-
-			break;
-		case R.id.wp_btn_check_order_state://检查订单状态
-			UIHelper.ToastMessage(this, "已支付");
+		case R.id.wp_btn_check_order_state:// 检查订单状态
+			checkMenuState();
 			break;
 		default:
 			break;
 		}
 	}
+
+	private void checkMenuState() {
+		if (batMicroTransaction != null && MICRO_FLAG) {//查询被扫的订单状态
+			batMicroTransaction.checkOrder(batMicroTransaction.getTransactionInfo().getTranId(), new ResultListener() {
+
+				@Override
+				public void onSuccess(Response response) {
+					progresser.showContent();
+					OrderDef def = (OrderDef) response.result;
+					if (OrderDef.STATE_PAYED == def.getState()) {
+						Intent resultIntent = batMicroTransaction.bundleResult();
+						deliverResult(batMicroTransaction.isMixTransaction(), resultIntent);// 增加组合支付逻辑处理
+																							// wu@[20150729]
+					} else {
+						// showPayFaildDialog(response.msg);
+						UIHelper.ToastMessage(ThirdpayActivity.this, response.msg);
+					}
+
+				}
+
+				@Override
+				public void onFaild(Response response) {
+					progresser.showContent();
+					UIHelper.ToastMessage(ThirdpayActivity.this, response.msg);
+				}
+			});
+
+		} else if (batNativeTransaction != null && !MICRO_FLAG) {//查询主扫的订单状态
+			batNativeTransaction.checkOrder(batNativeTransaction.getTransactionInfo().getTranId(),
+					new ResultListener() {
+						@Override
+						public void onSuccess(Response response) {
+							progresser.showContent();
+							OrderDef def = (OrderDef) response.result;
+							if (OrderDef.STATE_PAYED == def.getState()) {
+								Intent resultIntent = batNativeTransaction.bundleResult();
+								deliverResult(batNativeTransaction.isMixTransaction(), resultIntent);// 增加组合支付逻辑处理
+																										// wu@[20150729]
+							} else {
+								// showPayFaildDialog(response.msg);
+								UIHelper.ToastMessage(ThirdpayActivity.this, response.msg);
+							}
+
+						}
+
+						@Override
+						public void onFaild(Response response) {
+							progresser.showContent();
+							UIHelper.ToastMessage(ThirdpayActivity.this, response.msg);
+						}
+					});
+		}
+
+	}
+
 	// 显示主扫界面
 	private void showNativeMenu() {
 		nativeRemind.setVisibility(View.VISIBLE);
@@ -116,6 +181,7 @@ public class ThirdpayActivity extends ThirdpayScanActivity {
 		lineScannedQrcode.setBackgroundColor(getResources().getColor(R.color.blue_color));
 		lineScanQrcode.setBackgroundColor(getResources().getColor(R.color.gray_color));
 		MICRO_FLAG = false;
+		getSupportFragmentManager().beginTransaction().hide(fragment).commit();
 	}
 
 	// 显示被扫界面
@@ -129,36 +195,39 @@ public class ThirdpayActivity extends ThirdpayScanActivity {
 		lineScanQrcode.setBackgroundColor(getResources().getColor(R.color.blue_color));
 		lineScannedQrcode.setBackgroundColor(getResources().getColor(R.color.gray_color));
 		MICRO_FLAG = true;
+		getSupportFragmentManager().beginTransaction().show(fragment).commit();
 	}
 
-	//被扫支付
-	protected void micropay(String authCode) {
-		batMicroTransaction.batPay(Constants.ALIPAY_BAT, authCode, new ResultListener() {
-			
+	// 被扫支付
+	protected void micropay(String authCode, String type) {
+		batMicroTransaction.batPay(type, authCode, new ResultListener() {
+
 			@Override
 			public void onSuccess(Response response) {
 				progresser.showContent();
 				Intent responseIntent = batMicroTransaction.bundleResult();
 				deliverResult(batMicroTransaction.isMixTransaction(), responseIntent);
 			}
-			
+
 			@Override
 			public void onFaild(Response response) {
 				progresser.showContent();
 				if (response.code == 1) {
-					//TODO 显示支付状态
+					// TODO 显示支付状态
 				} else {
 					UIHelper.ToastMessage(ThirdpayActivity.this, response.msg);
 				}
-				
+
 			}
 		});
-		
+
 	}
-	//主扫支付
-	protected void nativepay() {
-		batNativeTransaction.batPay(Constants.ALIPAY_BAT, new ResultListener() {
-			
+
+	// 主扫支付
+	protected void nativepay(String type) {
+		progresser.showProgress();
+		batNativeTransaction.batPay(type, new ResultListener() {
+
 			@Override
 			public void onSuccess(Response response) {
 				progresser.showContent();
@@ -178,17 +247,20 @@ public class ThirdpayActivity extends ThirdpayScanActivity {
 					}
 				});
 			}
-			
+
 			@Override
 			public void onFaild(Response response) {
-				
+				progresser.showContent();
+				UIHelper.ToastMessage(ThirdpayActivity.this, response.msg);
 			}
 		});
-		
+
 	}
+
 	protected void showImgFromString(String url) {
 		ivBarcode.setImageBitmap(Tools.genQRCode(url));
 	}
+
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
@@ -199,11 +271,22 @@ public class ThirdpayActivity extends ThirdpayScanActivity {
 			batNativeTransaction.onDestory();
 		}
 	}
+
 	@Override
 	public void display(Response response) {
-		if (response.getResult() == null) { return; }
+		if (response.getResult() == null) {
+			return;
+		}
 		String authCode = response.getResult().toString();
 		progresser.showProgress();
-		micropay(authCode);
+		if (com.wizarpos.payment.padui.common.Constants.ALIPAY.equals(type)) {
+			micropay(Constants.ALIPAY_BAT, authCode);
+		} else if (com.wizarpos.payment.padui.common.Constants.WEPAY.equals(type)) {
+			micropay(Constants.WEPAY__BAT, authCode);
+		} else if (com.wizarpos.payment.padui.common.Constants.TENPAY.equals(type)) {
+			micropay(Constants.TENPAY_BAT, authCode);
+		} else if (com.wizarpos.payment.padui.common.Constants.BAIDUPAY.equals(type)) {
+			micropay(Constants.BAIDUPAY_BAT, authCode);
+		}
 	}
 }

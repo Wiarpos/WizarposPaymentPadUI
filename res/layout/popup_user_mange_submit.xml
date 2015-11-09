@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.wizarpos.pay"
+    android:id="@+id/tl_ll_query_condition"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/query_half_bg"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/query_title_half_bg"
+        android:gravity="center|center_vertical"
+        android:text="提示信息"
+        android:textColor="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tvTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_tishi"
+            android:drawablePadding="20dp"
+            android:gravity="center"
+            android:text="确定要"
+            android:textColor="@color/table_view_title_text_color"
+            android:textSize="35sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="删除"
+            android:textColor="@color/orange_color"
+            android:textSize="35sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="用户吗？"
+            android:textColor="@color/table_view_title_text_color"
+            android:textSize="35sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#00FFFFFF"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="30dp" >
+
+        <Button
+            android:id="@+id/btnCancelSubmit"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_selector_back"
+           	android:text="取消"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btnOKSubmit"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_selector_nextpage"
+           	android:text="确定"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>
